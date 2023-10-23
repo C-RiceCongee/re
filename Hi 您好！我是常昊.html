@@ -1,0 +1,1001 @@
+<!doctype html>
+<html style='font-size:12px !important'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+/* 
+ *     Typora Theme - Lapis    /    Author - YiNN 
+ *     https://github.com/YiNNx/typora-theme-lapis
+ */
+
+:root {
+    --text-color: #40464f;
+    /* Text */
+    --primary-color: #4870ac;
+    /* Primary Color */
+    --bg-color: #ffffff;
+    /* Background */
+
+    --marker-color: #a2b6d4;
+    /* List Marker */
+    --highlight-color: #ffffb5c2;
+    /* Highlight */
+    --header-span-color: var(--primary-color);
+    /* h2 Span Color */
+    --block-bg-color: #f6f8fa;
+    /* Block Background */
+
+    /* Overwrite of Typora Base Color */
+    --control-text-hover-color: #a2b6d4;
+    --rawblock-edit-panel-bd: var(--block-bg-color);
+    --item-hover-bg-color: rgb(246 248 250);
+    --active-file-bg-color: var(--block-bg-color);
+}
+
+/*
+ * Font-face for Cantarell, Source Han Serif CN and JetBrains Mono
+ */
+
+/*
+ * Basic Style
+ */
+
+#write {
+    max-width: 80%;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    word-spacing: 0px;
+    letter-spacing: 0px;
+    word-break: break-word;
+    word-wrap: break-word;
+    text-align: justify;
+
+    font-family: 'Cantarell', 'SourceHanSerifCN', 'JetBrainsMono';
+    margin-bottom: 20rem;
+}
+
+/* Strong */
+
+#write strong {
+    color: var(--primary-color);
+}
+
+/* Link */
+
+#write a {
+    color: var(--primary-color);
+}
+
+#write .md-p a,
+#write .md-heading a {
+    text-decoration: none;
+    word-wrap: break-word;
+    border-bottom: 1px solid var(--primary-color);
+    margin: 2px;
+}
+
+#write h2.md-heading a {
+    text-decoration: underline;
+    border-bottom: 0;
+    text-decoration-thickness: 1.2px;
+    text-underline-offset: 2px;
+}
+
+[md-inline=url],
+[md-inline=link]>.md-content,
+[md-inline=image]>.md-meta {
+    word-break: break-all;
+    font-weight: normal;
+    font-family: 'JetBrainsMono';
+    padding-left: 0.15rem;
+    padding-right: 0rem;
+    color: var(--marker-color);
+}
+
+
+/* 
+ * TOC
+ */
+
+.md-toc-content {
+    font-family: 'SourceHanSerifCN';
+}
+
+.md-toc-content:empty:before {
+    color: var(--primary-color);
+}
+
+#write div.md-toc-tooltip {
+    font-family: 'SourceHanSerifCN';
+    color: var(--primary-color);
+    position: static;
+    margin-top: 10px;
+    background-color: var(--block-bg-color);
+    line-height: 1.6rem;
+    padding: 0.3rem 0.75rem;
+    border-top: none;
+    /* border-left: 2px solid var(--primary-color);
+     */
+    border-radius: .5rem;
+}
+
+.md-toc:focus .md-toc-content {
+    border-color: var(--bg-color);
+    margin: 9px -1px;
+    margin-top: 9px;
+}
+
+.md-toc .md-toc-content {
+    border-color: var(--bg-color);
+    margin: 10px 0px;
+    margin-top: 10px;
+}
+
+
+/* mark */
+
+mark {
+    background: var(--highlight-color);
+    padding: 1px .15rem;
+    border-radius: 1px;
+    color: inherit;
+}
+
+/* 
+ * Paragraph
+ */
+
+#write+p,
+#write blockquote p {
+    font-size: 1.1rem;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    margin: 0;
+    line-height: 1.8rem;
+    color: var(--text-color);
+}
+
+/*
+ * Header
+ */
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+    font-family: 'SourceHanSerifCN';
+    padding: 0px;
+    color: var(--primary-color);
+}
+
+#write h1 {
+    text-align: center;
+}
+
+#write h2 {
+    background-color: var(--header-span-color);
+    color: var(--bg-color);
+    padding: 1px 12.5px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+#write h2 a {
+    color: var(--bg-color);
+    border-bottom-color: var(--bg-color) !important;
+}
+
+#write h2 strong {
+    color: var(--bg-color);
+}
+
+#write h2 code {
+    color: var(--bg-color);
+    background-color: var(--header-span-color);
+}
+
+@media print {
+    :root {
+        --text-color: rgb(0, 0, 0);
+    }
+}
+
+#write h1 {
+    font-size: 2rem;
+}
+
+#write h2 {
+    font-size: 1.5rem;
+}
+
+#write h3 {
+    font-size: 1.4rem;
+}
+
+#write h4 {
+    font-size: 1.2rem;
+}
+
+#write h5 {
+    font-size: 1.1rem;
+}
+
+#write h6 {
+    font-size: 1.1rem;
+}
+
+#write h1 {
+    padding-top: 0.9rem;
+    margin-bottom: 2.3rem;
+}
+
+#write h2 {
+    margin: .3em 0;
+}
+
+#write h3 {
+    margin: 1em 0 1em;
+}
+
+#write h4 {
+    margin: 0.8em 0 0.8em;
+}
+
+#write h5 {
+    margin: 0.6em 0 0.6em;
+}
+
+#write h6 {
+    margin: 0.4em 0 0.4em;
+}
+
+/*
+ * List
+ */
+
+::marker {
+    font-weight: bold;
+    color: var(--marker-color);
+}
+
+li.md-list-item {
+    margin: 0.4rem 0;
+}
+
+#write ul,
+#write ol {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding-left: 20px;
+}
+
+#write ul {
+    list-style-type: disc;
+}
+
+#write em {
+    padding: 0 3px 0 0;
+}
+
+#write ul ul {
+    list-style-type: square;
+}
+
+#write ol {
+    list-style-type: decimal;
+}
+
+#write li section {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.7rem;
+    text-align: justify;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/*
+ * Quote
+ */
+#write blockquote {
+    display: block;
+    font-size: .9em;
+    overflow: auto;
+    border-left: 3px solid var(--primary-color);
+    padding: 15px 30px 15px 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: var(--block-bg-color);
+}
+
+/*
+ * Inline code
+ */
+
+#write code {
+    color: var(--primary-color);
+    font-size: 94%;
+    font-weight: normal;
+    word-wrap: break-word;
+    padding: 2px 4px 2px;
+    border-radius: 3px;
+    margin: 2px;
+    background-color: var(--block-bg-color);
+    font-family: 'JetBrainsMono';
+    word-break: break-all;
+}
+
+/*
+ * Img
+ */
+#write img {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+#write p>.md-image:only-child:not(.md-img-error) img,
+#write p>img:only-child {
+    filter: drop-shadow(#d2dff4 0px 0px 8px);
+    border-radius: 3rem;
+    display: block;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/*
+ * Table
+ */
+#write table.md-table {
+    display: table;
+    text-align: justify;
+    overflow-x: auto;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    font-size: 1em;
+    margin: 0px 0px 20px;
+    width: 100%;
+}
+
+#write tbody {
+    border: 0;
+}
+
+#write table.md-table tr {
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+#write table.md-table tr th,
+#write table.md-table tr td {
+    font-size: 1rem;
+    border: 1px solid #d9dfe4;
+    padding: 5px 10px;
+    text-align: justify;
+}
+
+#write table.md-table tr th {
+    font-family: SourceHanSerifCN;
+    text-align: center;
+    min-width: 10rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#write table tr td:hover,
+#write table tr th:hover {
+    background-color: var(--block-bg-color);
+}
+
+table.md-table td {
+    min-width: 32px;
+}
+
+/* Footnote */
+
+sup.md-footnote {
+    background-color: var(--block-bg-color);
+    color: var(--primary-color);
+}
+
+.md-def-name {
+    color: var(--primary-color);
+}
+
+/*
+ * Math Script 
+ */
+
+.md-inline-math script {
+    color: var(--primary-color);
+}
+
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+    background: var(--bg-color);
+    color: var(--md-char-color);
+}
+
+
+.code-tooltip {
+    box-shadow: none;
+}
+
+.md-rawblock-tooltip.md-rawblock-control {
+    border-radius: 1rem;
+}
+
+.md-rawblock .md-rawblock-tooltip {
+    inset: auto 0.3rem auto auto;
+    transform: translateY(-120%);
+}
+
+/* 
+ * Comment
+ */
+.md-comment {
+    color: #a8a8a9;
+    opacity: 1;
+    font-family: 'JetBrainsMono';
+}
+
+/*
+ * Dividing line
+ */
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 2px solid #eef2f5;
+    border-radius: 2px;
+}
+
+/* Checkbox */
+
+#write input[type=checkbox] {
+    width: 0;
+}
+
+.task-list-item input::before {
+    content: "";
+    display: inline-block;
+    width: 1.0125rem;
+    height: 1.0125rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid var(--marker-color);
+    border-radius: 1.2rem;
+    background-color: #fdfdfd;
+    margin-left: -0.1rem;
+    margin-right: 0.1rem;
+    margin-top: -.6rem;
+}
+
+.task-list-item input:checked::before {
+    content: '✓';
+    font-weight: bold;
+    -webkit-text-stroke: 1px var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    font-size: 0.75rem;
+    line-height: 0.8rem;
+}
+
+blockquote .task-list-item input::before {
+    margin-top: .2rem;
+}
+
+/*
+ * Sidebar
+ */
+#typora-sidebar {
+    font-family: 'Cantarell', 'SourceHanSerifCN';
+    height: 100%;
+    color: var(--text-color);
+    font-size: 0.92rem;
+    background-color: var(--bg-color);
+}
+
+#sidebar-content.sidebar-content {
+    margin-top: .5rem;
+}
+
+.html-for-mac #write input[type=checkbox] {
+    margin-top: 0.65rem;
+}
+
+.html-for-mac #write .task-list-item input::before {
+    margin-top: -.85rem;
+}
+
+
+/*
+ * Sidebar - FileNode
+ */
+
+.active-tab-files #info-panel-tab-file .info-panel-tab-border,
+.active-tab-outline #info-panel-tab-outline .info-panel-tab-border,
+.ty-show-search #info-panel-tab-search .info-panel-tab-border {
+    border-radius: 10px;
+    height: 1px;
+    background-color: var(--primary-color);
+}
+
+.file-node-content {
+    color: var(--primary-color);
+    line-height: 1.6rem;
+}
+
+span.file-node-title-name-part {
+    color: var(--text-color);
+}
+
+span.file-node-title-ext-part {
+    color: var(--text-color);
+}
+
+.file-node-icon {
+    padding-right: 0.2rem;
+}
+
+.file-tree-node.active>.file-node-background {
+    border-left: 4px solid var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/*
+ * Sidebar - Outline
+ */
+
+#outline-content {
+    height: 100%;
+    overflow-x: hidden;
+    line-height: 1.4rem;
+    font-size: .96rem;
+}
+
+#outline-content .outline-active,
+.pin-outline .outline-active {
+    color: var(--primary-color);
+}
+
+.outline-item {
+    padding-left: 2em;
+    padding-top: 0;
+}
+
+/* Meta Block */
+
+pre.md-meta-block {
+    font-family: 'JetBrainsMono';
+    color: var(--primary-color);
+    background: #f6f8fa;
+    padding: 1.5rem;
+    margin: -37px 0rem 3.8rem;
+    /* border-radius: 1rem; */
+    filter: drop-shadow(#d2dff4 0px 3px 3px);
+    /* border-top: 1px solid var(--primary-color); */
+    /* border-bottom: 1px solid var(--primary-color); */
+}
+
+pre.md-fences-advanced.md-focus .md-fences-adv-panel {
+    border-radius: .8rem;
+}
+
+/*
+ * Scrollbar
+ */
+
+#outline-content::-webkit-scrollbar {
+    width: .5rem;
+}
+
+#file-library::-webkit-scrollbar {
+    width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(179, 179, 179, 0.425);
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+/* 
+ * Code Block - Style
+ */
+
+.md-fences:before {
+    content: ' ';
+    display: block;
+    width: 100%;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-color: #282c34;
+    margin-bottom: -7px;
+    border-radius: 5px;
+    background-position: 10px 10px;
+}
+
+.CodeMirror-wrap .CodeMirror-scroll {
+    overflow-x: auto;
+}
+
+.md-fences .cm-s-inner.CodeMirror {
+    margin: 1.5rem 0;
+}
+
+.cm-s-inner.CodeMirror {
+    padding: 1.2rem .8rem;
+    color: #4f5467;
+    font-family: 'JetBrainsMono';
+    border-radius: 10px;
+    background-color: var(--block-bg-color);
+    /* border: 1px solid #eef2f5;*/
+    line-height: 1.6rem;
+}
+
+.CodeMirror-gutters {
+    border-right: 1px solid #a2b6d452;
+    background: inherit;
+    white-space: nowrap;
+}
+
+pre.CodeMirror-line {
+    padding: 0 1.2rem;
+}
+
+.CodeMirror-linenumber {
+    padding: 0 3px 0 5px;
+    text-align: right;
+    color: var(--primary-color);
+}
+
+/* 
+ * Code Block - Color Scheme
+ */
+
+.cm-s-inner .cm-keyword {
+    color: #1694b6 !important;
+}
+
+.cm-s-inner .cm-operator {
+    color: #2f86d2 !important;
+}
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-builtin,
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-tag,
+.cm-s-inner .cm-property,
+.cm-s-inner .cm-quote {
+    color: #b9218e !important;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #7aadad !important;
+}
+
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type,
+.cm-s-inner .cm-atom {
+    color: #378ed8 !important;
+}
+
+.cm-s-inner .cm-number {
+    color: #1a5494 !important;
+}
+
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-qualifier {
+    color: #0744ac !important;
+}
+
+.cm-s-inner .cm-string {
+    color: #6f42c2 !important;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #27638f !important;
+}
+
+.cm-s-inner .cm-comment {
+    color: #9a9a9a !important;
+}
+
+.cm-s-inner .cm-meta {
+    color: #0b93be !important;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #8f6aa8 !important;
+}
+
+.cm-s-inner .cm-error {
+    color: rgba(255, 255, 255, 1) !important;
+    background-color: #b9218e40 !important;
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+    text-decoration: underline;
+    color: white !important;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid var(--primary-color);
+    z-index: 3;
+}
+
+.cm-s-inner div.CodeMirror-selected {
+    background: rgba(167, 178, 189, 0.2) !important;
+}
+
+.cm-s-inner.CodeMirror-focused div.CodeMirror-selected {
+    background: rgba(167, 178, 189, 0.2) !important;
+}
+
+.cm-s-inner .CodeMirror-selected,
+.cm-s-inner .CodeMirror-selectedtext {
+    background-color: rgba(167, 178, 189, 0.0) !important;
+}
+
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line>span::-moz-selection,
+.cm-s-inner .CodeMirror-line>span>span::-moz-selection {
+    background-color: rgba(167, 178, 189, 0.2);
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line>span::selection,
+.cm-s-inner .CodeMirror-line>span>span::selection {
+    background-color: rgba(167, 178, 189, 0.2);
+}
+
+.md-rawblock .md-rawblock-tooltip {
+    inset: auto 0.3rem auto auto;
+    transform: translateY(-120%);
+}
+
+/*
+ * Sitting - Unibody
+ */
+
+.megamenu-menu-header {
+    border: none;
+    color: var(--text-color);
+}
+
+.megamenu-menu-header #megamenu-back-btn,
+.megamenu-menu-header .megamenu-menu-header-title-back,
+.megamenu-menu-header .megamenu-menu-header-title-menu {
+    color: var(--text-color);
+}
+
+.megamenu-menu {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: none !important;
+}
+
+header,
+#megamenu-content {
+    background-color: var(--bg-color);
+    background-image: none !important;
+}
+
+
+</style><title>Hi 您好！我是常昊</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='hi-您好我是常昊'><span>Hi 您好！我是常昊</span><img src="https://pic1.zhimg.com/50/v2-e7c1183602893dd8a38fe26de43a664c_720w.webp?source=2c26e567" alt="" style="zoom: 77%;" /></h1><h2 id='求职意向'><strong><span>求职意向</span></strong></h2><ul><li><p><span>职位:  </span><strong><code>web</code><span>前端开发</span></strong><span>/</span><strong><code>NodeJS</code><span>全栈开发</span></strong></p></li><li><p><span>位置:  </span><strong><span>广东省广州市</span></strong></p></li><li><p><span>薪资: </span><code>15k-20k</code><strong><span>（可议）</span></strong></p></li><li><p><span>到岗时间：</span><strong><span>15天之内（可议）</span></strong></p></li></ul><h2 id='个人介绍'><span>个人介绍</span></h2><p><span>个人博客：</span><a href='https://blog.quancundexiwang.wang/' target='_blank' class='url'>https://blog.quancundexiwang.wang/</a><span>  (更好的了解我，欢迎来踩踩！) </span><img src="https://picx.zhimg.com/50/v2-173132f501b3c98355022b3733120f2b_720w.webp?source=2c26e567" alt="" style="zoom: 67%;" /></p><p><strong><span>首先，非常感谢您抽出时间查看我的简历，这对我来说是一次宝贵的机会，感激您的关注。</span></strong><span> </span><img src="https://picx.zhimg.com/50/v2-fc72dd1debd364cc904de3c92b527518_720w.webp?source=2c26e567" style="zoom:33%;" /></p><p><span>我本人对技术充满热情，热衷于深入研究Web开发，无论是前端还是后端，我都有浓厚的兴趣，持续不断地学习。</span><img src="https://pica.zhimg.com/50/v2-c90e020cf59f66022adaae54cf624a69_720w.webp?source=2c26e567" alt="动图" style="zoom:40%;" /></p><p><span>我目前拥有</span><strong><span>4年的工作经验</span></strong><span>，一直以来都在追求技术的提升，以确保我所创造的产品具备真正的价值。因此，我每天都不断积累新知识，以不断提高自己的专业水平。</span><img src="https://picx.zhimg.com/50/v2-f06930b4601eaba092e852b9eca01ba4_720w.webp?source=2c26e567" alt="动图" style="zoom:50%;" /></p><p><span> 我的性格积极、乐观，充满活力，喜欢探索各种领域，对工作兢兢业业，充满责任感。我善于与人相处，愿意为团队承担责任，热衷于与他人分享技术见解。</span></p><p><span>我期待在新的团队中继续积极地参与技术交流，希望能够共同创造有技术交流氛围的工作环境。</span><img src="https://pic1.zhimg.com/50/v2-bd4e427c14de21b37ce4801e08184675_720w.webp?source=2c26e567" alt="动图" style="zoom:50%;" /></p><h2 id='个人技能'><strong><span>个人技能</span></strong></h2><blockquote><p><span>个人最擅长的是解决问题，梳理需求，非</span><code>API</code><span>选手！</span></p></blockquote><ol start='' ><li><p><strong><span>前端技术</span></strong><span>： 熟练掌握 </span><strong><code>HTML5</code><span>、</span><code>CSS3</code></strong><span>，以及</span><strong><code>ES6</code></strong><span>及更高版本的新特性。具备丰富的前端开发经验，包括使用主流前端框架，如</span><code>Vue</code><span>和</span><code>React</code><span>，进行项目开发。</span></p></li><li><p><strong><span>前端工具</span></strong><span>： 熟悉</span><strong><code>Vite</code></strong><span>和</span><strong><code>Webpack</code></strong><span>等前端打包工具，了解</span><strong><code>ESBuild</code></strong><span>和</span><strong><code>Rollup</code></strong><span>。对前端工程化有深刻了解。</span></p></li><li><p><strong><span>后端开发</span></strong><span>： 熟悉</span><strong><code>Node.js</code></strong><span>，并使用</span><strong><code>Express</code></strong><span>和</span><strong><code>Koa</code></strong><span>框架进行后端项目开发。具备</span><code>Sequelize ORM</code><span>框架经验。 </span></p></li><li><p><strong><span>数据库</span></strong><span>：熟悉 </span><code>Mysql</code><span>,</span><code>MongoDb</code><span>,</span><code>redis</code><span>数据库</span></p></li><li><p><strong><span>容器化</span></strong><span>：熟练使用Docker进行容器化开发环境的搭建、应用程序的打包，并能够将容器部署到线上生产环境。熟悉</span><code>Docker Compose</code><span>以管理多容器应用。</span></p></li><li><p><strong><span>前后端项目部署</span></strong><span>：熟练配置Nginx反向代理服务器，实现前端和后端请求的路由、负载均衡，同时确保SSL证书的配置，以支持安全的HTTPS协议。能够打包、部署和维护前后端应用程序，确保应用的性能和稳定性。</span></p></li><li><p><strong><span>桌面应用开发</span></strong><span>： 熟悉</span><strong><code>Electron</code></strong><span>桌面端开发，结合</span><strong><code>Vue</code></strong><span>和</span><strong><code>React</code></strong><span>框架，具有相关开发经验。 </span></p></li><li><p><strong><span>小程序开发</span></strong><span>： 熟悉小程序开发，具备跨端框架经验，包括</span><strong><code>uniapp</code></strong><span>和</span><strong><code>taro</code></strong><span>。 </span></p></li><li><p><strong><span>版本控制</span></strong><span>： 熟练使用Git进行多人协作代码管理，有多人协作开发经验。熟悉</span><code>Husky</code><span>，能够实施</span><code>commit</code><span>规范限制、</span><code>Prettier</code><span>规范代码格式，以及一些通用的</span><code>Lint</code><span>配置。 </span></p></li><li><p><strong><span>前后端交互</span></strong><span>： 具备深刻的前后端交互逻辑理解，能够快速定位并解决业务中出现的问题。 </span></p></li><li><p><strong><code>WebGL</code><span>开发</span></strong><span>： 具有</span><strong><code>THREE.JS</code></strong><span> </span><strong><code>WebGL</code></strong><span>开发经验，能够创建各种互动的</span><code>3D</code><span>场景。 </span></p></li><li><p><strong><span>全栈项目经验</span></strong><span>： 在多种后端技术领域具有经验，接触过</span><strong><code>Golang(gin,gorm,zap,viper)</code></strong><span>、</span><strong><code>Java(SSM)</code></strong><span>，有，能够开发全栈项目。</span></p></li><li><p><strong><span>了解常见的通讯协议</span></strong><span>：</span><code>http,websocket,rpc</code></p></li></ol><h2 id='工作经验'><strong><span>工作经验</span></strong></h2><h3 id='广州竞远安全技术股份有限公司-2021年6月-至今'><strong><span>广州竞远安全技术股份有限公司</span></strong><span> </span><em><span>2021年6月</span></em><span>-</span><em><span>至今</span></em></h3><p><u><strong><span>职位：前端开发组长</span></strong></u></p><p><span>在公司的工作职责方面，我的主要职责包括：</span></p><ul><li><p><strong><span>安全平台项目框架搭建：</span></strong><span> 负责为公司的多个安全平台项目建立基本的业务框架和开发框架，确保项目具备可扩展性和高效性。</span></p></li><li><p><strong><span>项目业务开发：</span></strong><span> 参与并负责公司多个平台项目的业务开发，包括前端和后端开发，以满足业务需求。</span></p></li><li><p><strong><span>代码规范与Commit规范：</span></strong><span> 负责配置和维护所有前端项目的代码规范，以确保代码质量和一致性。此外，我还负责实施Commit规范，以便更好地管理代码库。</span></p></li><li><p><strong><span>问题解决：</span></strong><span> 快速定位并解决在业务或开发过程中出现的问题，确保项目的顺利进行和高质量交付。</span></p></li></ul><p><span>通过这些职责，我能够为公司的安全平台项目提供稳固的技术基础，积极参与项目开发，确保代码质量和规范，同时解决项目中的各种挑战和问题，以满足业务需求并提供高质量的解决方案。</span></p><h3 id='广州超链信息科技有限公司--2020年6月-2021年6月'><strong><span>广州超链信息科技有限公司</span></strong><span>  </span><em><span>2020年6月</span></em><span>-</span><em><span>2021年6</span></em><span>月</span></h3><p><u><strong><span>职位：前端开发工程师</span></strong></u></p><p><span>在我之前的工作中，我承担了以下主要职责：</span></p><ul><li><p><strong><span>PC端电商平台的SCRM后台项目：</span></strong><span> 负责开发和维护PC端电商平台的SCRM后台项目。这包括前端和后端开发，确保平台的稳定性和功能的正常运行。</span></p></li><li><p><strong><span>移动端SCRM对接企业微信SDK：</span></strong><span> 负责与企业微信SDK对接，开发移动端应用程序，以实现SCRM功能。这包括移动端应用程序的开发和集成，以便实现与企业微信的连接。</span></p></li><li><p><strong><span>前端组代码审核和构建：</span></strong><span> 担任前端组的负责人，负责审核前端代码，确保代码质量和一致性。同时，负责构建流程的管理，以确保项目的有效部署和交付。</span></p></li></ul><p><span>通过这些职责，我不仅为PC端电商平台提供了可靠的后台支持，还成功将SCRM整合到移动端应用中，同时也有效管理和维护了前端组的代码，以确保团队的协作和项目的成功实施。</span></p><h3 id='广州曼大德宇教育科技有限公司-2019年6月-2020年6月'><strong><span>广州曼大德宇教育科技有限公司</span></strong><span> </span><em><span>2019年6月</span></em><span>-</span><em><span>2020年6</span></em><span>月</span></h3><p><strong><u><span>职位：web前端开发工程师</span></u></strong></p><p><span>在我的职业经历中，我担任以下关键职责：</span></p><ul><li><p><strong><span>旧项目的维护与迭代：</span></strong><span> 负责公司旧项目的维护和持续迭代，确保项目的稳定性和功能的更新。这包括识别和修复问题，应对新需求，以及改进现有功能。</span></p></li><li><p><strong><span>新项目的前端开发：</span></strong><span> 对公司的新项目，我负责前端项目的需求分析，反馈收集和优化。这包括与团队合作，了解业务需求，提供技术建议，以确保项目顺利启动。</span></p></li><li><p><strong><span>独立项目管理：</span></strong><span> 我具备独立管理项目的能力，包括项目构建、技术栈的选择，以及前端需求分析。这意味着我能够独立承担项目的起始阶段，规划项目架构，选择合适的技术工具，并定义清晰的前端需求。</span></p></li></ul><p><span>通过这些职责，我为公司的旧项目提供了可靠的维护和迭代支持，同时也积极参与新项目的需求分析和前端开发，以确保项目的成功实施。我的独立项目管理经验也使我能够独自承担项目的启动和规划工作。</span></p><h2 id='项目经验'><strong><span>项目经验</span></strong></h2><h3 id='备案检查工具桌面端应用'><strong><span>备案检查工具桌面端应用</span></strong></h3><p><span>在这个项目中，我使用了Electron+Vue+Node技术栈，开发了一款PC端检查工具桌面应用。以下是项目亮点和成就：</span></p><ul><li><p><strong><span>技术栈</span></strong><span>: 使用Electron、Vue和Node框架，实现了视图层和操作系统脚本的无缝交互，支持zip文件的导入导出，以及常用文件操作功能。</span></p></li><li><p><strong><span>Node模块封装</span></strong><span>: 对Node模块进行封装，以提高接口可靠性，确保了Node调用的稳定性。</span></p></li><li><p><strong><span>Nedb数据库</span></strong><span>: 尝试使用Nedb数据库，成功实现了本地数据的处理和存储，丰富了应用的功能。</span></p></li></ul><p><span>在项目中的主要成就包括：</span></p><ul><li><p><strong><span>Zip文件操作</span></strong><span>: 完善了zip文件的导入导出功能，并编写了自动化测试用例，确保了功能的稳定性和可靠性。</span></p></li><li><p><strong><span>Nedb数据库优化</span></strong><span>: 改进了Nedb数据库操作，添加了更多的数据结构，提供了更多的本地数据处理选项，提升了应用的数据管理能力。</span></p></li><li><p><strong><span>视图层和操作系统交互</span></strong><span>: 通过改善视图层和操作系统脚本的交互，提高了应用的用户体验，使操作更加流畅和直观。</span></p></li><li><p><strong><span>本地文件操作优化</span></strong><span>: 对本地文件的读写操作进行了优化，提高了操作效率，从而提升了应用的性能。</span></p></li></ul><p><span>这些改进和优化措施使得PC端检查工具桌面应用更加强大、稳定，提供了更好的用户体验，同时也增加了应用的功能和性能。</span></p><h3 id='国家漏洞平台爬虫工具'><strong><span>国家漏洞平台爬虫工具</span></strong></h3><p><span>在这个项目中，我使用了</span><strong><span>Electron+React+Node</span></strong><span>技术栈，开发了一款桌面端工具，专为公司的信息安全工程师设计，用于爬取国家漏洞发布平台数据并将其导出到Excel。以下是项目技术栈和难点：</span></p><ul><li><p><strong><span>技术栈</span></strong><span>: 使用</span><strong><code>Electron</code></strong><span>作为多平台跨段桌面端框架，</span><strong><code>React</code><span> </span></strong><span>用于前端视图层开发，</span><strong><code>Node</code></strong><span>用于与操作系统脚本进行交互。此外，采用</span><code>**TypeScript**</code><span>(TS)进行代码类型校验，以提高代码质量和可维护性。</span></p></li><li><p><strong><span>难点及解决方式</span></strong><span>:</span></p><ul><li><p><strong><span>多条件爬虫问题</span></strong><span>: 处理多条件爬虫时，整合被爬网站的检索条件会引发数据量过大导致请求SocketIO异常的问题。解决方式是分批请求，以避免一次性发起过多请求，提高稳定性和性能。</span></p></li><li><p><strong><span>Electron的appId问题</span></strong><span>: appId的重复不变可能导致Windows端更新失败。解决方式是通过手写一个脚本，在编译打包前读取package.json，随机生成一个appId并写入，从而避免appId的重复问题，确保应用的顺利更新。</span></p></li></ul></li></ul><p><span>这个项目的技术栈和解决难点反映了我在应对复杂问题和提高桌面应用性能方面的技能和经验。通过此工具，公司的信息安全工程师能够更有效地获取和分析漏洞数据，提高信息安全的水平。</span></p><h3 id='等级保护密码测试合规平台'><strong><span>等级保护密码测试合规平台</span></strong></h3><p><span>我负责开发和维护一款用于第三方单点登录跳转查询等级保护业务信息的平台，该平台的主要技术栈和成就如下：</span></p><p><strong><span>技术栈：</span></strong></p><ul><li><p><strong><span>Vue 3声明式前端框架：</span></strong><span> 使用Vue 3作为前端框架，以实现页面的交互和展示。</span></p></li><li><p><strong><span>TypeScript (TS)：</span></strong><span> 利用TypeScript进行类型校验，提高代码的可维护性和稳定性。</span></p></li><li><p><strong><span>Ant Design Vue (antd vue)：</span></strong><span> 使用Ant Design Vue UI框架来构建用户界面，提供了一致的UI风格和组件。</span></p></li><li><p><strong><span>Tailwind CSS (WindCSS)：</span></strong><span> 使用WindCSS作为CSS框架，以快速构建和美化界面。</span></p></li><li><p><strong><span>Pinia状态管理库：</span></strong><span> 使用Pinia来管理前端状态，以确保数据的一致性和可追踪性。</span></p></li></ul><p><strong><span>项目业绩：</span></strong></p><ul><li><p><strong><span>前端页面设计完成：</span></strong><span> 设计并开发了前端页面，以实现第三方单点登录跳转查询功能，提供用户友好的界面。</span></p></li><li><p><strong><span>用户登录信息加密：</span></strong><span> 加强了用户登录信息的安全性，采用适当的加密措施，以保护用户数据的机密性。</span></p></li><li><p><strong><span>SSL证书配置：</span></strong><span> 配置SSL证书，使平台支持HTTPS安全访问，提高通信的保密性和完整性。</span></p></li></ul><p><span>通过这些努力，我成功构建了一个功能完备、用户友好、安全可靠的等级保护业务信息查询平台，为公司提供了一个合规的解决方案，满足法规要求并确保信息安全。</span></p><h3 id='等保管理平台小程序'><strong><span>等保管理平台小程序</span></strong></h3><p><span>我负责开发一款小程序，用于支持检查人员在外执行任务。以下是项目技术栈、有趣的功能和项目业绩的概述：</span></p><p><strong><span>技术栈：</span></strong></p><ul><li><p><strong><span>小程序基础库：</span></strong><span> 基于小程序基础库进行开发，使用WXML、WXSS、JavaScript等技术构建小程序应用。</span></p></li><li><p><strong><span>THREE.js：</span></strong><span> 使用THREE.js来实现WebGL三维内容的展示。</span></p></li><li><p><strong><span>ECharts：</span></strong><span> 利用ECharts库来展示图表数据。</span></p></li><li><p><strong><span>自定义水印拍照打卡：</span></strong><span> 开发了自定义水印功能，允许用户拍照并加上水印进行任务打卡。</span></p></li><li><p><strong><span>小程序嵌入：</span></strong><span> 将ECharts图表嵌入到小程序中，以展示数据图表。</span></p></li></ul><p><span>这个项目不仅提供了必要的任务执行功能，还增加了一些有趣和创新的功能，例如自定义水印和图表展示，以提高用户体验和任务数据的可视化呈现。</span></p><h3 id='scrm平台移动端'><strong><span>SCRM平台移动端</span></strong></h3><p><span>这个移动端SCRM用户管理系统项目是针对客户业务的一个关键部分，它集成了企业微信SDK以支持微信生态，同时也负责用户信息管理和新客户推广。以下是项目的技术栈和我的负责模块，以及项目业绩的摘要：</span></p><p><strong><span>技术栈：</span></strong></p><ul><li><p><strong><span>企业微信SDK对接：</span></strong><span> 与企业微信SDK集成，以支持企业微信的用户验证和其他功能。</span></p></li><li><p><strong><span>Vue-cli脚手架：</span></strong><span> 使用Vue-cli脚手架来配置项目，实现一些配置化功能。</span></p></li><li><p><strong><span>Vant UI：</span></strong><span> 使用Vant UI框架来设计整个前端页面的布局和主题风格。</span></p></li></ul><p><strong><span>负责模块：</span></strong></p><ul><li><p><strong><span>共用组件封装：</span></strong><span> 负责封装共用组件，以提高开发效率和代码可维护性。</span></p></li><li><p><strong><span>企业微信验证功能：</span></strong><span> 与后端合作，实现企业微信第三方和自建应用的用户验证功能。</span></p></li><li><p><strong><span>素材中心和分享功能：</span></strong><span> 基于微信SDK，开发素材中心和各种临时素材资源的分享功能，以便用户和商家之间共享信息和商品。</span></p></li></ul><p><strong><span>项目业绩：</span></strong></p><ul><li><p><strong><span>从0到1项目实践：</span></strong><span> 完成了整个项目的建设，个人贡献占项目的70%以上。</span></p></li><li><p><strong><span>模块开发节省时间：</span></strong><span> 开发了模块，使开发周期节省了50%。</span></p></li><li><p><strong><span>模块开发和调试：</span></strong><span> 负责开发模块功能，并进行调试和BUG修复。</span></p></li><li><p><strong><span>文档梳理和完善：</span></strong><span> 对模块进行文档梳理和完善，以提高项目的可维护性和易用性。</span></p></li></ul><h3 id='超链scrm平台管理系统'><strong><span>超链SCRM平台管理系统</span></strong></h3><p><span>这个电商平台的SCRM项目涵盖了多个重要模块，包括员工、客户、商品、店铺、选品、营销等，我主要负责店铺装修、商品管理和营销模块的开发和维护。以下是项目的技术栈、我负责的模块以及我的项目业绩的摘要：</span></p><p><strong><span>技术栈：</span></strong></p><ul><li><p><strong><span>Vue全家桶：</span></strong><span> 使用Vue-cli脚手架工具配置项目，以实现一些配置化功能。</span></p></li><li><p><strong><span>Element UI：</span></strong><span> 借助Element UI来设计整个前端页面的布局和主题统一。</span></p></li><li><p><strong><span>高德 SDK：</span></strong><span> 使用高德SDK来实现店铺模块的定制信息展示。</span></p></li><li><p><strong><span>ECharts：</span></strong><span> 使用ECharts来展示图表数据。</span></p></li></ul><p><strong><span>负责模块：</span></strong></p><ul><li><p><strong><span>店铺装修：</span></strong><span> 负责店铺模块的定制化信息展示，确保店铺信息完整和吸引力。</span></p></li><li><p><strong><span>商品管理：</span></strong><span> 负责商品模块的开发和维护，以支持电商平台的商品管理功能。</span></p></li><li><p><strong><span>营销模块：</span></strong><span> 负责营销模块的开发，包括精准营销和数据报表展示。</span></p></li></ul><p><strong><span>项目业绩：</span></strong></p><ul><li><p><strong><span>项目的开发和维护：</span></strong><span> 负责SCRM项目的开发和维护，确保项目的持续运行和改进。</span></p></li><li><p><strong><span>公共方法和组件封装：</span></strong><span> 完成了公共方法和组件的封装，以提高代码复用性和项目配置优化。</span></p></li><li><p><strong><span>数据报表组件设计：</span></strong><span> 设计了Echart数据报表组件，同时协助封装百度地图SDK组件。</span></p></li><li><p><strong><span>维护和优化：</span></strong><span> 负责项目的维护和优化，包括处理Bug和性能优化。</span></p></li><li><p><strong><span>代码审核和发布：</span></strong><span> 负责项目的代码审核和发布，确保代码质量和版本控制。</span></p></li></ul><h3 id='教育背景'><strong><span>教育背景</span></strong></h3><ul><li><p><span>学校：</span><strong><span>广州番禺理工学院</span></strong></p></li><li><p><span>学年：2016年-2019年</span></p></li><li><p><span>专业：计算机网络专业</span></p></li></ul><blockquote><p><span>The trick to learning a lot is not to learn too much all at once</span></p></blockquote><p>&nbsp;</p></div></div>
+</body>
+</html>
